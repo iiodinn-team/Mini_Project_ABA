@@ -1,11 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 void main () {
-  runApp(GovernmentPage());
+  runApp(const GovernmentPage());
 }
 
 class GovernmentPage extends StatelessWidget {
+  const GovernmentPage({super.key});
+
   @override
   Widget build(BuildContext context) {
    return MaterialApp(
@@ -24,9 +25,9 @@ class GovernmentHomePage extends StatelessWidget {
         backgroundColor: Colors.indigo,
         leading: const Icon(Icons.arrow_back , color: Colors.white, size: 32 ),
         titleSpacing: 0,
-        title: Row(
+        title: const Row(
           mainAxisSize: MainAxisSize.min,
-          children: const [
+          children: [
             Text('ABA',
             style: TextStyle(
               color: Colors.white,
@@ -59,7 +60,7 @@ class GovernmentHomePage extends StatelessWidget {
               color: Colors.indigo,
               alignment: Alignment.centerLeft,
               padding: EdgeInsets.all(8.0),
-              child: Column(
+              child: const Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,7 +82,7 @@ class GovernmentHomePage extends StatelessWidget {
             child: Container(
               alignment: Alignment.bottomRight,
               color: Colors.blue,
-              child: Icon(
+              child: const Icon(
                 Icons.dashboard_customize_outlined,
                 size: 100,
                 color: Colors.grey,
@@ -90,9 +91,6 @@ class GovernmentHomePage extends StatelessWidget {
           ),
         ],
       ),
-
-        
-
     );
   }
 }
