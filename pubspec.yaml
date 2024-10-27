@@ -33,6 +33,8 @@ dependencies:
 
   font_awesome_flutter: ^10.7.0
   cupertino_icons: ^1.0.8
+  gradient_icon: ^2.0.9
+  flutter_material_design_icons: ^1.1.7447
 
 dev_dependencies:
   flutter_test:

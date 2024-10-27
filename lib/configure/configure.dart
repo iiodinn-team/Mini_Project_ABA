@@ -15,13 +15,6 @@ extension HexColor on String {
   }
 }
 
-LinearGradient customGradient(String startHex, String endHex) {
-  return LinearGradient(
-    colors: [
-      startHex.toColor(),
-      endHex.toColor(),
-    ],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
-  );
+Color hexToColor(String hexColor) {
+  return Color(int.parse(hexColor.replaceFirst('#', '0xff')));
 }
