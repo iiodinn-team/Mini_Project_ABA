@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const GovernmentPage());
+  runApp(const HistoryPage());
 }
 
-class GovernmentPage extends StatelessWidget {
-  const GovernmentPage({super.key});
+class HistoryPage extends StatelessWidget {
+  const HistoryPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +40,7 @@ class GovernmentHomePage extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Text(
-              'ទូទាត់ប្រាក់',
+              'មើលប្រវត្តិ',
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 22,
@@ -52,7 +52,7 @@ class GovernmentHomePage extends StatelessWidget {
           IconButton(
             onPressed: () {},
             icon: const Icon(
-              Icons.search_sharp,
+              Icons.keyboard_control_outlined,
               color: Colors.white,
               size: 32,
             ),
@@ -109,36 +109,9 @@ class GovernmentHomePage extends StatelessWidget {
               ],
             ),
             // const SizedBox(height: 16),
-            Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                color: Colors.black87,
-                child: ListView.builder(
-                  itemCount: 10,
-                  itemBuilder: (context, index) {
-                    return Card(
-                      color: Colors.grey.shade800,
-                      margin: const EdgeInsets.symmetric(vertical: 8),
-                      child: const ListTile(
-                        leading: CircleAvatar(
-                          backgroundImage: NetworkImage("https://th.bing.com/th/id/OIP.m7LnR2rAzamqD5tCdqNbjAHaHa?w=173&h=180&c=7&r=0&o=5&pid=1.7"),
-                          radius: 20,
-                          backgroundColor: Colors.grey,
-                        ),
-                        title: Text(
-                          "សេវារដ្ឋបាលសំខាន់ៗ",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        ),
-                        subtitle: Text(
-                          "ការបង់ប្រាក់ពន្ធគយ និងទូទាត់ផ្សេងៗ",
-                          style: TextStyle(color: Colors.white70),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ),
+            // Expanded(
+            //
+            // ),
           ],
         ),
       ),
