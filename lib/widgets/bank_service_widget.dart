@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../configure/configure.dart';
 
-// Custom Bank Service Widget
 class CustomBankServiceWidget extends StatelessWidget {
   final String title;
   final Color backgroundColor;
@@ -20,8 +19,8 @@ class CustomBankServiceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          height: 105,
-          width: 105,
+          height: 115,
+          width: 115,
           decoration: BoxDecoration(
             color: backgroundColor,
             borderRadius: BorderRadius.circular(20.0),

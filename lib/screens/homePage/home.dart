@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_project_aba/configure/configure.dart';
 import 'package:mini_project_aba/widgets/bank_service.dart';
@@ -5,18 +6,47 @@ import 'package:mini_project_aba/widgets/bank_service.dart';
 import '../../widgets/bank_service_widget.dart';
 
 void main() {
-  runApp(const MaterialApp(
+  runApp(MaterialApp(
     home: Home(),
   ));
 }
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+   Home({super.key});
 
-  @override
+   List<Widget> carouselItems = [
+     ClipRRect(
+       borderRadius: BorderRadius.circular(15.0),
+       child: Image.network(
+         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRufospeicvIxbJrqvLNc4DVnqQtYn6XSZmHA&s',
+         fit: BoxFit.cover,
+         width: double.infinity,
+       ),
+     ),
+     ClipRRect(
+       borderRadius: BorderRadius.circular(15),
+       child: Image.network(
+         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7XEWpVlO87GbVyB07ffuRkyvtyMWohz9qH44drVE0NR6hKABUecoJyg2wtxX-V4dOGMU&usqp=CAU',
+         fit: BoxFit.cover,
+         width: double.infinity,
+       ),
+     ),
+     ClipRRect(
+       borderRadius: BorderRadius.circular(15),
+       child: Image.network(
+         'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEl9968QE-TxWgaII_hNJGE9u1eeknS7D0fRhqdko8dx6YZQGU0PvSRvMTUolhOrNMWZE&usqp=CAU',
+         fit: BoxFit.cover,
+         width: double.infinity,
+       ),
+     ),
+   ];
+
+
+   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
     final padding = size.width * 0.05;
+
 
     return Scaffold(
       backgroundColor: primaryColor,
@@ -194,11 +224,153 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: padding * 2),
+                const SizedBox(height: 24),
 
-                // Bank Service
-                const BankService(),
-                SizedBox(height: padding * 2),
+                // Bank Service Section with Column
+                Container(
+                  constraints: BoxConstraints(maxHeight: size.height * 0.28),
+                 // padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8 ),
+                  decoration: BoxDecoration(
+                    color: Colors.black26,
+                    borderRadius: BorderRadius.circular(24),
+                  ),
+                  child: Column(
+                    children: [
+                      const Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.folder,
+                              title: 'គណនី',
+                              textColor: fontPrimaryWhite,
+                            ),
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.credit_card,
+                              title: 'កាត',
+                              textColor: fontPrimaryWhite,
+                            ),
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.paid,
+                              title: 'ទូទាត់',
+                              textColor: fontPrimaryWhite,
+                            ),
+                          ],
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      const Expanded(
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.qr_code,
+                              title: 'ABA ស្កែន',
+                              textColor: fontPrimaryWhite,
+                            ),
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.star_border,
+                              title: 'ទូទាត់ប្រចាំ',
+                              textColor: fontPrimaryWhite,
+                            ),
+                            CustomBankServiceWidget(
+                              backgroundColor: fontPrimaryBlack,
+                              icon: Icons.arrow_forward,
+                              title: 'ផ្ទេប្រាក់',
+                              textColor: fontPrimaryWhite,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Container(
+                        width: 360,
+                        height: 1,
+                        color: fontPrimaryWhite,
+                      ),
+                      const SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "សេវាស្ថាប័នរដ្ធាភិបាល",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "ផ្ញើប្រាក់ទៅ ATM",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "សេវាកម្ម",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "គណនីថ្មី",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "កាលវិភាគ",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "ណែនាំដល់មិត្តភក្តិ",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "កម្ចី",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "ABA ចាយបានលុយ",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "អាត្រាប្តូរប្រាក់",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "ទីតាំង ABA",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                            CustomBankService(
+                              icon: Icons.home_filled,
+                              text: "សៀវភៅមូលប្បប័ត្រ",
+                              backgroundColor: Colors.black,
+                              textColor: Colors.white,
+                            ),
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+
+
+                const SizedBox(height: 30),
 
                 // Footer Ad Banner
                 Column(
@@ -212,21 +384,25 @@ class Home extends StatelessWidget {
                         color: fontPrimaryWhite,
                       )
                     ),
-                    const SizedBox(height: 12,),
-                    Container(
-                      height: size.width * 0.3,
-                      decoration: BoxDecoration(
-                        color: Colors.blueAccent,
-                        borderRadius: BorderRadius.circular(15),
-                        image: const DecorationImage(
-                          image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSodnR2vsw4u9d2tV99JujVwTL1pDl0vdEf1pqr3NcG4VN4zYUkrIg-mNKSb9hv3YBC2R4&usqp=CAU'),
-                          fit: BoxFit.cover,
+                    const SizedBox(height: 14,),
+                    SizedBox(
+                      width: double.infinity,
+                      child: CarouselSlider(
+                        items: carouselItems,
+                        options: CarouselOptions(
+                          height: size.height * 0.15,
+                          viewportFraction: 1.0,
+                          enlargeCenterPage: true,
+                          // Customize the height of the carousel
+                          autoPlay: true,
+                          enableInfiniteScroll: true,
+                          onPageChanged: (index, reason) {
+                          },
                         ),
                       ),
                     ),
                   ],
                 ),
-
               ],
             ),
           ], // children of list view
@@ -250,7 +426,7 @@ class ActionButton extends StatelessWidget {
       padding: EdgeInsets.symmetric(horizontal: size.width * 0.03, vertical: size.width * 0.02),
       decoration: BoxDecoration(
         color: color,
-        borderRadius: BorderRadius.circular(10),
+        borderRadius: BorderRadius.circular(15),
       ),
       child: Text(
         label,
