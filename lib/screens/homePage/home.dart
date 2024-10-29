@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:mini_project_aba/configure/configure.dart';
 import 'package:mini_project_aba/widgets/bank_service.dart';
+import 'package:mini_project_aba/widgets/service_card.dart';
 
 import '../../widgets/bank_service_widget.dart';
 
@@ -228,12 +229,12 @@ class Home extends StatelessWidget {
 
                 // Bank Service Section with Column
                 Container(
-                  constraints: BoxConstraints(maxHeight: size.height * 0.28),
-                 // padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8 ),
+                  constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height * 0.38),
                   decoration: BoxDecoration(
                     color: Colors.black26,
                     borderRadius: BorderRadius.circular(24),
                   ),
+                  padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                   child: Column(
                     children: [
                       const Expanded(
@@ -261,7 +262,7 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 8),
+                      const SizedBox(height: 12),
                       const Expanded(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -287,11 +288,13 @@ class Home extends StatelessWidget {
                           ],
                         ),
                       ),
+                      const SizedBox(height: 12),
                       Container(
                         width: 360,
                         height: 1,
                         color: fontPrimaryWhite,
                       ),
+                      const SizedBox(height: 16),
                       const SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
@@ -302,60 +305,70 @@ class Home extends StatelessWidget {
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "ផ្ញើប្រាក់ទៅ ATM",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "សេវាកម្ម",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "គណនីថ្មី",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "កាលវិភាគ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "ណែនាំដល់មិត្តភក្តិ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "កម្ចី",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "ABA ចាយបានលុយ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "អាត្រាប្តូរប្រាក់",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "ទីតាំង ABA",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
+                            SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "សៀវភៅមូលប្បប័ត្រ",
@@ -364,15 +377,14 @@ class Home extends StatelessWidget {
                             ),
                           ],
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ),
 
-
                 const SizedBox(height: 30),
 
-                // Footer Ad Banner
+                // Ad Banner
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -393,7 +405,6 @@ class Home extends StatelessWidget {
                           height: size.height * 0.15,
                           viewportFraction: 1.0,
                           enlargeCenterPage: true,
-                          // Customize the height of the carousel
                           autoPlay: true,
                           enableInfiniteScroll: true,
                           onPageChanged: (index, reason) {
@@ -403,6 +414,301 @@ class Home extends StatelessWidget {
                     ),
                   ],
                 ),
+
+                const SizedBox(height: 30,),
+                Column(
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('រកមើលសេវាកម្ម',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        ),
+
+                        Text('រកមើលសេវាកម្ម >',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        )
+                      ],
+                    ),
+
+                    const SizedBox(height: 16,),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: const SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsWrbplKrYw93zgjKLlLnKxjwVaNZSo5oeHQ&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://cdn-icons-png.flaticon.com/128/16757/16757823.png',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://b2b-cambodia.com/storage/uploads/articles/large/eCD1qa1PSRIqYhK5wLbXbRMDOVnpzNDlaN5QUgdP.png',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://vireakbuntham.com/img/vet.ff4db239.png',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://pbs.twimg.com/profile_images/610991506271244288/Ztu79xaF_400x400.png',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9bMQS7Xx1KS0h2oc4Lr87SqCL-6XRlvTD8w&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://pbs.twimg.com/profile_images/1543952615456792576/vlfuBIFX_400x400.jpg',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://yt3.googleusercontent.com/LrP7ADWn0wxn0s5w9VE2MHPx8rl1c3X9emR63S3qEFUi2xAVYaJMJwsrWorbpv429OO3lZs2=s900-c-k-c0x00ffffff-no-rj',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLi63PCfJm1O2eL0kHCYbUMd_SeLHmg4RlZw&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+
+                const SizedBox(height: 30,),
+                Column(
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('រកមើលសេវាកម្ម',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        ),
+
+                        Text('រកមើលសេវាកម្ម >',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        )
+                      ],
+                    ),
+
+                    const SizedBox(height: 16,),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: const SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 30,),
+                Column(
+                  children: [
+                    const Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Text('រកមើលសេវាកម្ម',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        ),
+
+                        Text('រកមើលសេវាកម្ម >',
+                          style: TextStyle(
+                            fontSize: 14,
+                            fontWeight: FontWeight.bold,
+                            color: fontPrimaryWhite,
+                          ),
+                        )
+                      ],
+                    ),
+
+                    const SizedBox(height: 16,),
+                    Container(
+                      padding: const EdgeInsets.all(12),
+                      decoration: BoxDecoration(
+                        color: Colors.black26,
+                        borderRadius: BorderRadius.circular(22),
+                      ),
+                      child: const SingleChildScrollView(
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: [
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,), ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                            ServiceCard(
+                              imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuirN4pNOfF2hJYvy64mVE959fTB0Jy0ln5Q&s',
+                              text: 'ក្រឌីត ប្បួរ៉ូខេមបូឌា',
+                            ),
+                            SizedBox(width: 10,),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+
+                const SizedBox(height: 30,),
+
+                Container(
+                  decoration: BoxDecoration(
+                    color: fontPrimaryWhite,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: TextButton(
+                      onPressed: (){},
+                      child: const Text('កែអេក្រង់ដើម',
+                        style: TextStyle(
+                          fontSize: 18,
+                          //fontWeight: FontWeight.bold,
+                          color: fontPrimaryBlack,
+                        ),
+                      )
+                  ),
+                )
+
               ],
             ),
           ], // children of list view
@@ -412,13 +718,40 @@ class Home extends StatelessWidget {
   }
 }
 
-// Custom Action Button Widget
+Widget _buildServiceCard(String title, String imagePath) {
+  return Card(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(imagePath, width: 50, height: 50),
+        const SizedBox(height: 8),
+        Text(title),
+      ],
+    ),
+  );
+}
+
+// Corrected _buildAppCard function
+Widget _buildAppCard(String title, String imagePath) {
+  return Card(
+    child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Image.asset(imagePath, width: 100, height: 100),
+        const SizedBox(height: 8),
+        Text(title),
+      ],
+    ),
+  );
+}
+
+
 class ActionButton extends StatelessWidget {
   final String label;
   final Color color;
   final Size size;
 
-  ActionButton({required this.label, required this.color, required this.size});
+  const ActionButton({super.key, required this.label, required this.color, required this.size});
 
   @override
   Widget build(BuildContext context) {
