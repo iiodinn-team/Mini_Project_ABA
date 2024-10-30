@@ -17,6 +17,56 @@ class GovernmentPage extends StatelessWidget {
   }
 }
 
+final List<Map<String, String>> items = [
+  {
+    'title': 'សេវារដ្ឋបាលសំខាន់ៗ',
+    'subtitle': 'ការបង់ប្រាក់ពន្ធគយ និងទូទាត់ផ្សេងៗ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.D-xQ5JvKQzHBMkHBw-MLVwHaJY?w=127&h=180&c=7&r=0&o=5&pid=1.7',
+  },
+  {
+    'title': 'ការផ្តល់សេវា សុខាភិបាល',
+    'subtitle': 'ការទូទាត់សេវារង្វាន់សុខាភិបាល',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.TN2axdBtKxat-Wzi6AnJHQAAAA?pid=ImgDet&w=192&h=192&c=7',
+  },
+  {
+    'title': 'សេវាការពារសង្គម',
+    'subtitle': 'ទូទាត់ប្រាក់ចំណូលកាន់កាប់សង្គម',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.nCxs3XSv2fi_TVev-J7ySQHaHa?pid=ImgDet&w=192&h=192&c=7',
+  },
+  {
+    'title': 'សេវាកម្មវប្បធម៌',
+    'subtitle': 'ជំនួយការផ្តល់សេវាជាតិ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.5J_gyidurGrI4t7mbUq5OAAAAA?pid=ImgDet&w=192&h=212&c=7',
+  },
+  {
+    'title': 'ទូទាត់បរិច្ចាគសាធារណៈ',
+    'subtitle': 'សេវាទូទាត់ការបរិច្ចាគផ្សេងៗ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.7AKgF3ZeFQyOMlwrfnIsxwAAAA?pid=ImgDet&w=192&h=174&c=7',
+  },
+  {
+    'title': 'សេវាកម្មអប់រំ',
+    'subtitle': 'គាំទ្រការអប់រំកុមារ និងមណ្ឌលសិក្សា',
+    'imageUrl': 'https://kiridangrek.com/wp-content/uploads/2021/11/Logo-Final.png',
+  },
+  {
+    'title': 'សេវាការពារតំបន់បរិស្ថាន',
+    'subtitle': 'ការទូទាត់និងគាំទ្រអភិរក្សធម្មជាតិ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.6TnC9xzRVbLou_CKDwnfnQHaHa?pid=ImgDet&w=192&h=192&c=7',
+  },
+  {
+    'title': 'សេវាហិរញ្ញវត្ថុ',
+    'subtitle': 'សេវាបង់ប្រាក់ធនាគាររដ្ឋ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.cE9V3ODn1vKcPL8zK_G8bgHaHB?pid=ImgDet&w=192&h=181&c=7',
+  },
+  {
+    'title': 'សេវាសាធារណៈអនឡាញ',
+    'subtitle': 'បន្ថែមសេវាអនឡាញសម្រាប់សាធារណៈ',
+    'imageUrl': 'https://th.bing.com/th/id/OIP.LWi9bfBqC8Deh1V-qohKdAHaHa?pid=ImgDet&w=192&h=192&c=7',
+  },
+];
+
+
+
 class GovernmentHomePage extends StatelessWidget {
   const GovernmentHomePage({super.key});
 
@@ -24,7 +74,7 @@ class GovernmentHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.indigo.shade900,
+        backgroundColor: const Color(0xFF002E44),
         leading: const Icon(Icons.arrow_back, color: Colors.white, size: 32),
         titleSpacing: 0,
         title: const Row(
@@ -36,6 +86,7 @@ class GovernmentHomePage extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
+                fontFamily: 'Kantumruy',
               ),
             ),
             SizedBox(width: 10),
@@ -44,6 +95,7 @@ class GovernmentHomePage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 22,
+                fontFamily: 'Kantumruy',
               ),
             ),
           ],
@@ -77,12 +129,12 @@ class GovernmentHomePage extends StatelessWidget {
                       children: [
                         Text(
                           "សេវាស្ថាប័នរដ្ឋភិបាល",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: 'Kantumruy',),
                         ),
                         SizedBox(height: 8),
                         Text(
                           "បង់ថ្លៃពន្ធ ពន្ធគយ ថ្លៃលិខិតអនុញ្ញាតផ្សេងៗ និងថ្លៃចំណាយផ្សេងៗទៀតដល់រដ្ខាភិបាល",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white,fontFamily: 'Kantumruy',),
                         ),
                       ],
                     ),
@@ -108,30 +160,37 @@ class GovernmentHomePage extends StatelessWidget {
                 ),
               ],
             ),
-            // const SizedBox(height: 16),
             Expanded(
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
-                color: Colors.black87,
+                color: Color(0xFF1C1F24),
                 child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: items.length,
                   itemBuilder: (context, index) {
+                    final item = items[index];
                     return Card(
-                      color: Colors.grey.shade800,
+                      color: Colors.white10,
                       margin: const EdgeInsets.symmetric(vertical: 8),
-                      child: const ListTile(
+                      child: ListTile(
                         leading: CircleAvatar(
-                          backgroundImage: NetworkImage("https://th.bing.com/th/id/OIP.m7LnR2rAzamqD5tCdqNbjAHaHa?w=173&h=180&c=7&r=0&o=5&pid=1.7"),
+                          backgroundImage: NetworkImage(item['imageUrl']!),
                           radius: 20,
                           backgroundColor: Colors.grey,
                         ),
                         title: Text(
-                          "សេវារដ្ឋបាលសំខាន់ៗ",
-                          style: TextStyle(color: Colors.white, fontSize: 16),
+                          item['title']!,
+                          style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 16,
+                            fontFamily: 'Kantumruy',
+                          ),
                         ),
                         subtitle: Text(
-                          "ការបង់ប្រាក់ពន្ធគយ និងទូទាត់ផ្សេងៗ",
-                          style: TextStyle(color: Colors.white70),
+                          item['subtitle']!,
+                          style: const TextStyle(
+                            color: Colors.white70,
+                            fontFamily: 'Kantumruy',
+                          ),
                         ),
                       ),
                     );
@@ -142,7 +201,7 @@ class GovernmentHomePage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: Colors.indigo.shade900,
+      backgroundColor: const Color(0xFF002E44),
     );
   }
 }

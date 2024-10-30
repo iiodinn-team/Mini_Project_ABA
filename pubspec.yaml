@@ -37,6 +37,8 @@ dependencies:
   gradient_icon: ^2.0.9
   flutter_material_design_icons: ^1.1.7447
   carousel_slider: ^5.0.0
+  iconify_flutter: ^0.0.5
+  flutter_svg:
 
 dev_dependencies:
   flutter_test:
