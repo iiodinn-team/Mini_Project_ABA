@@ -4,9 +4,14 @@ import 'package:mini_project_aba/configure/configure.dart';
 import 'package:mini_project_aba/widgets/bank_service.dart';
 import 'package:mini_project_aba/widgets/service_card.dart';
 
+import '../../pages/card_screen.dart';
+import '../../pages/payment_screen.dart';
+import '../../pages/profile_screen.dart';
 import '../../widgets/bank_service_widget.dart';
 import '../exploreService/schedule.dart';
+import '../govermentServicePage/government_service.dart';
 import '../history/history.dart';
+import '../notificationPage/bottom_navigation_bar_page.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -15,7 +20,18 @@ void main() {
 }
 
 class Home extends StatelessWidget {
-   Home({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Home",
+      debugShowCheckedModeBanner: false,
+      home: HomeApp(),
+    );
+  }
+}
+
+class HomeApp extends StatelessWidget {
+  HomeApp({super.key});
 
    List<Widget> carouselItems = [
      ClipRRect(
@@ -50,9 +66,27 @@ class Home extends StatelessWidget {
     final size = MediaQuery.of(context).size;
     final padding = size.width * 0.05;
 
-
     return Scaffold(
       backgroundColor: primaryColor,
+      appBar: AppBar(
+        backgroundColor: primaryColor,
+        actions: [
+          IconButton(
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => BottomNavigationBarPage()),
+              );
+            },
+            icon: const Icon(
+              Icons.notifications_none_sharp,
+              color: Colors.white,
+              size: 32,
+            ),
+          ),
+
+        ],
+      ),
       body: SafeArea(
         child: ListView(
           padding: EdgeInsets.symmetric(horizontal: padding, vertical: padding),
@@ -60,39 +94,44 @@ class Home extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                // User Profile & Greeting
-                Row(
-                  children: [
-                    CircleAvatar(
-                      radius: size.width * 0.08,
-                      backgroundImage: const NetworkImage('https://fwcdn.pl/ppo/38/31/233831/464223_1.3.jpg'),
-                    ),
-                    SizedBox(width: padding),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'សួស្តី, Minhoo',
-                          style: TextStyle(
-                            fontSize: size.width * 0.05,
-                            fontWeight: FontWeight.bold,
-                            color: fontPrimaryWhite,
+                GestureDetector(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => ProfileScreen()),
+                    );
+                  },
+                  child: Row(
+                    children: [
+                      CircleAvatar(
+                        radius: size.width * 0.08,
+                        backgroundImage: const NetworkImage('https://fwcdn.pl/ppo/38/31/233831/464223_1.3.jpg'),
+                      ),
+                      SizedBox(width: padding),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'សួស្តី, Minhoo',
+                            style: TextStyle(
+                              fontSize: size.width * 0.05,
+                              fontWeight: FontWeight.bold,
+                              color: fontPrimaryWhite,
+                            ),
                           ),
-                        ),
-                        Text(
-                          'មើលប្រូហ្វាល >',
-                          style: TextStyle(
-                            fontSize: size.width * 0.04,
-                            color: fontPrimaryWhite,
+                          Text(
+                            'មើលប្រូហ្វាល >',
+                            style: TextStyle(
+                              fontSize: size.width * 0.04,
+                              color: fontPrimaryWhite,
+                            ),
                           ),
-                        ),
-                      ],
-                    ),
-                  ],
+                        ],
+                      ),
+                    ],
+                  ),
                 ),
                 SizedBox(height: padding * 2),
-
-                // Balance Section
                 Container(
                   padding: const EdgeInsets.all(12),
                   decoration: BoxDecoration(
@@ -140,7 +179,7 @@ class Home extends StatelessWidget {
                                 onTap: () {
                                   Navigator.push(
                                     context,
-                                    MaterialPageRoute(builder: (context) => HistoryPage()), // Replace with your destination page
+                                    MaterialPageRoute(builder: (context) => HistoryPage()),
                                   );
                                 },
                                 child: Text(
@@ -257,27 +296,47 @@ class Home extends StatelessWidget {
                   padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                   child: Column(
                     children: [
-                      const Expanded(
+                      Expanded(
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            CustomBankServiceWidget(
+                            const CustomBankServiceWidget(
                               backgroundColor: fontPrimaryBlack,
                               icon: Icons.folder,
                               title: 'គណនី',
                               textColor: fontPrimaryWhite,
                             ),
-                            CustomBankServiceWidget(
-                              backgroundColor: fontPrimaryBlack,
-                              icon: Icons.credit_card,
-                              title: 'កាត',
-                              textColor: fontPrimaryWhite,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => CardScreen(), // Replace with your screen
+                                  ),
+                                );
+                              },
+                              child: const CustomBankServiceWidget(
+                                backgroundColor: fontPrimaryBlack,
+                                icon: Icons.credit_card,
+                                title: 'កាត',
+                                textColor: fontPrimaryWhite,
+                              ),
                             ),
-                            CustomBankServiceWidget(
-                              backgroundColor: fontPrimaryBlack,
-                              icon: Icons.paid,
-                              title: 'ទូទាត់',
-                              textColor: fontPrimaryWhite,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => PaymentScreen(), // Replace with your screen
+                                  ),
+                                );
+                              },
+                              child: const CustomBankServiceWidget(
+                                backgroundColor: fontPrimaryBlack,
+                                icon: Icons.paid,
+                                title: 'ទូទាត់',
+                                textColor: fontPrimaryWhite,
+                              ),
                             ),
                           ],
                         ),
@@ -319,11 +378,21 @@ class Home extends StatelessWidget {
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            const CustomBankService(
-                              icon: Icons.home_filled,
-                              text: "សេវាស្ថាប័នរដ្ធាភិបាល",
-                              backgroundColor: Colors.black,
-                              textColor: Colors.white,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => GovernmentPage(), // Replace with your screen
+                                  ),
+                                );
+                              },
+                              child: const CustomBankService(
+                                icon: Icons.home_filled,
+                                text: "សេវាស្ថាប័នរដ្ធាភិបាល",
+                                backgroundColor: Colors.black,
+                                textColor: Colors.white,
+                              ),
                             ),
                             const SizedBox(width: 8),
                             const CustomBankService(
@@ -347,18 +416,22 @@ class Home extends StatelessWidget {
                               textColor: Colors.white,
                             ),
                             const SizedBox(width: 8),
-                            CustomBankService(
-                              icon: Icons.home_filled,
-                              text: "កាលវិភាគ",
-                              backgroundColor: Colors.black,
-                              textColor: Colors.white,
+                            InkWell(
                               onTap: () {
                                 Navigator.push(
                                   context,
-                                  MaterialPageRoute(builder: (context) => SchedulePage()),
+                                  MaterialPageRoute(
+                                    builder: (context) => SchedulePage(), // Replace with your screen
+                                  ),
                                 );
                               },
-                            ),
+                              child: const CustomBankService(
+                                icon: Icons.home_filled,
+                                text: "កាលវិភាគ",
+                                backgroundColor: Colors.black,
+                                textColor: Colors.white,
+                              ),
+                              ),
                             const SizedBox(width: 8),
                             const CustomBankService(
                               icon: Icons.home_filled,

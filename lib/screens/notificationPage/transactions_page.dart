@@ -1,14 +1,7 @@
 import 'package:flutter/material.dart';
 
-// Color constants
-const Color primaryColor = Color(0xFF002E44);
-const Color secondaryColor = Color(0xFF005B7A);
-const Color accentColorAmber = Color(0xFF04B9D4);
-const Color accentColorRed = Color(0xFFE3252D);
-const Color accentColorGreen = Color(0xFF0CAC2C);
-const Color fontPrimaryBlack = Color(0xFF000000);
-const Color fontPrimaryWhite = Color(0xFFFFFFFF);
-const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+import '../../configure/configure.dart';
+
 
 class TransactionsPage extends StatelessWidget {
   final List<Map<String, String>> transactions = [
@@ -68,7 +61,7 @@ class TransactionsPage extends StatelessWidget {
               child: Text(
                 "ថ្ងៃនេះ",
                 style: TextStyle(
-                  color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for header text color
+                  color: fontPrimaryWhite85,
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Kantumruy',
@@ -86,7 +79,7 @@ class TransactionsPage extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: Card(
-                  color: secondaryColor, // Use secondaryColor for card background
+                  color: secondaryColor,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
@@ -114,7 +107,7 @@ class TransactionsPage extends StatelessWidget {
                               transaction["title"]!,
                               style: const TextStyle(
                                 fontWeight: FontWeight.w200,
-                                color: fontPrimaryWhite, // Use fontPrimaryWhite for title text
+                                color: fontPrimaryWhite,
                                 fontFamily: 'Kantumruy',
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -182,7 +175,7 @@ class TransactionsPage extends StatelessWidget {
   Color _getBackgroundColor(String iconName) {
     switch (iconName) {
       case "home":
-        return secondaryColor; // Use secondaryColor for home icon background
+        return secondaryColor;
       case "wifi":
         return Colors.orange;
       case "swap_horiz":

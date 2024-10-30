@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const GovernmentPage());
-}
+import '../homePage/home.dart';
+
+// void main() {
+//   runApp(const GovernmentPage());
+// }
 
 class GovernmentPage extends StatelessWidget {
   const GovernmentPage({super.key});
@@ -75,7 +77,15 @@ class GovernmentHomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color(0xFF002E44),
-        leading: const Icon(Icons.arrow_back, color: Colors.white, size: 32),
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back, color: Colors.white, size: 32),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => Home()),
+            );
+          },
+        ),
         titleSpacing: 0,
         title: const Row(
           mainAxisSize: MainAxisSize.min,

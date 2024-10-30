@@ -1,14 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Color constants
-const Color primaryColor = Color(0xFF002E44);
-const Color secondaryColor = Color(0xFF005B7A);
-const Color accentColorAmber = Color(0xFF04B9D4);
-const Color accentColorRed = Color(0xFFE3252D);
-const Color accentColorGreen = Color(0xFF0CAC2C);
-const Color fontPrimaryBlack = Color(0xFF000000);
-const Color fontPrimaryWhite = Color(0xFFFFFFFF);
-const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+import '../../configure/configure.dart';
 
 class PersonalSettingsPage extends StatelessWidget {
   // Grouped notifications by date
@@ -39,7 +31,7 @@ class PersonalSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: primaryColor, // Use primaryColor constant
+      backgroundColor: primaryColor,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -56,7 +48,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
-                      color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for text color
+                      color: fontPrimaryWhite85,
                       fontFamily: 'Kantumruy',
                     ),
                   ),
@@ -108,7 +100,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w200,
-                      color: fontPrimaryWhite, // Use fontPrimaryWhite for title text color
+                      color: fontPrimaryWhite,
                       fontFamily: 'Kantumruy',
                     ),
                   ),
@@ -117,7 +109,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     notification["description"]!,
                     style: const TextStyle(
                       fontSize: 14,
-                      color: fontPrimaryWhite, // Use fontPrimaryWhite for description text color
+                      color: fontPrimaryWhite,
                       fontFamily: 'Kantumruy',
                       fontWeight: FontWeight.w100,
                     ),

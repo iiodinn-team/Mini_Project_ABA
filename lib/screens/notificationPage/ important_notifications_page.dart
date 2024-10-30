@@ -1,20 +1,12 @@
 import 'package:flutter/material.dart';
 
-// Define color constants
-const Color primaryColor = Color(0xFF002E44);
-const Color secondaryColor = Color(0xFF005B7A);
-const Color accentColorAmber = Color(0xFF04B9D4);
-const Color accentColorRed = Color(0xFFE3252D);
-const Color accentColorGreen = Color(0xFF0CAC2C);
-const Color fontPrimaryBlack = Color(0xFF000000);
-const Color fontPrimaryWhite = Color(0xFFFFFFFF);
-const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+import '../../configure/configure.dart';
 
 class ImportantNotificationsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center, // Center content vertically
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Container(
           width: 100, // Size of the container
@@ -37,7 +29,7 @@ class ImportantNotificationsPage extends StatelessWidget {
           style: TextStyle(
             fontSize: 20,
             fontWeight: FontWeight.w200,
-            color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for the text color
+            color: fontPrimaryWhite85,
             fontFamily: 'Kantumruy',
           ),
         ),
@@ -49,7 +41,7 @@ class ImportantNotificationsPage extends StatelessWidget {
             textAlign: TextAlign.center,
             style: TextStyle(
               fontSize: 16,
-              color: fontPrimaryWhite85.withOpacity(0.7), // Use fontPrimaryWhite85 for the text color
+              color: fontPrimaryWhite85.withOpacity(0.7),
               fontFamily: 'Kantumruy',
               fontWeight: FontWeight.w100,
             ),

@@ -7,6 +7,7 @@ const Color accentColorRed = Color(0xFFE3252D);
 const Color accentColorGreen = Color(0xFF0CAC2C);
 const Color fontPrimaryBlack = Color(0xFF000000);
 const Color fontPrimaryWhite = Color(0xFFFFFFFF);
+const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
 
 extension HexColor on String {
   Color toColor() {
