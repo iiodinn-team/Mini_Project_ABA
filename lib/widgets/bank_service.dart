@@ -9,6 +9,7 @@ class CustomBankService extends StatelessWidget {
   final FontWeight fontWeight;
   final EdgeInsets padding;
   final double borderRadius;
+  final VoidCallback? onTap;
 
   const CustomBankService({
     super.key,
@@ -20,6 +21,7 @@ class CustomBankService extends StatelessWidget {
     this.fontWeight = FontWeight.bold,
     this.padding = const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
     this.borderRadius = 30.0,
+    this.onTap,
   });
 
   Color hexToColor(String hexColor) {

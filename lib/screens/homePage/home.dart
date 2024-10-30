@@ -5,6 +5,8 @@ import 'package:mini_project_aba/widgets/bank_service.dart';
 import 'package:mini_project_aba/widgets/service_card.dart';
 
 import '../../widgets/bank_service_widget.dart';
+import '../exploreService/schedule.dart';
+import '../history/history.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -134,23 +136,41 @@ class Home extends StatelessWidget {
                                 color: accentColorAmber,
                                 borderRadius: BorderRadius.circular(6),
                               ),
-                              child: Text(
-                                'គណនីគោល',
-                                style: TextStyle(
-                                  fontSize: size.width * 0.035,
-                                  color: Colors.white,
+                              child: GestureDetector(
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => HistoryPage()), // Replace with your destination page
+                                  );
+                                },
+                                child: Text(
+                                  'គណនីគោល',
+                                  style: TextStyle(
+                                    fontSize: size.width * 0.035,
+                                    color: Colors.white,
+                                  ),
+                                  textAlign: TextAlign.center,
                                 ),
-                                textAlign: TextAlign.center,
                               ),
+
                             ),
                             SizedBox(width: padding * 0.4),
-                            const Text(
-                              'Mobile Saving',
-                              style: TextStyle(
-                                color: fontPrimaryWhite,
-                                fontSize: 14,
+                            InkWell(
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => HistoryPage()), // Replace with your destination page
+                                );
+                              },
+                              child: const Text(
+                                'Mobile Saving',
+                                style: TextStyle(
+                                  color: fontPrimaryWhite, // Ensure this variable is defined in your code
+                                  fontSize: 14,
+                                ),
                               ),
                             ),
+
                           ],
                         ),
                         const SizedBox(height: 18),
@@ -295,81 +315,88 @@ class Home extends StatelessWidget {
                         color: fontPrimaryWhite,
                       ),
                       const SizedBox(height: 16),
-                      const SingleChildScrollView(
+                      SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(
                           children: [
-                            CustomBankService(
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "សេវាស្ថាប័នរដ្ធាភិបាល",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "ផ្ញើប្រាក់ទៅ ATM",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "សេវាកម្ម",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "គណនីថ្មី",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
+                            const SizedBox(width: 8),
                             CustomBankService(
                               icon: Icons.home_filled,
                               text: "កាលវិភាគ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
+                              onTap: () {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (context) => SchedulePage()),
+                                );
+                              },
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "ណែនាំដល់មិត្តភក្តិ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
+
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "កម្ចី",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "ABA ចាយបានលុយ",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "អាត្រាប្តូរប្រាក់",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "ទីតាំង ABA",
                               backgroundColor: Colors.black,
                               textColor: Colors.white,
                             ),
-                            SizedBox(width: 8),
-                            CustomBankService(
+                            const SizedBox(width: 8),
+                            const CustomBankService(
                               icon: Icons.home_filled,
                               text: "សៀវភៅមូលប្បប័ត្រ",
                               backgroundColor: Colors.black,
