@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+// Color constants
+const Color primaryColor = Color(0xFF002E44);
+const Color secondaryColor = Color(0xFF005B7A);
+const Color accentColorAmber = Color(0xFF04B9D4);
+const Color accentColorRed = Color(0xFFE3252D);
+const Color accentColorGreen = Color(0xFF0CAC2C);
+const Color fontPrimaryBlack = Color(0xFF000000);
+const Color fontPrimaryWhite = Color(0xFFFFFFFF);
+const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+
 class TransactionsPage extends StatelessWidget {
   final List<Map<String, String>> transactions = [
     {
@@ -58,7 +68,7 @@ class TransactionsPage extends StatelessWidget {
               child: Text(
                 "ថ្ងៃនេះ",
                 style: TextStyle(
-                  color: Color(0xFFFAF9F6),
+                  color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for header text color
                   fontSize: 18,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Kantumruy',
@@ -76,20 +86,20 @@ class TransactionsPage extends StatelessWidget {
               return Padding(
                 padding: const EdgeInsets.only(bottom: 8.0),
                 child: Card(
-                  color: const Color(0xFF005B7A),
+                  color: secondaryColor, // Use secondaryColor for card background
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12),
                   ),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0), // Padding around the ListTile
+                    padding: const EdgeInsets.all(16.0),
                     child: ListTile(
-                      contentPadding: EdgeInsets.zero, // Remove inner padding from ListTile
+                      contentPadding: EdgeInsets.zero,
                       leading: CircleAvatar(
-                        backgroundColor: Colors.white, // Stroke color
-                        radius: 22, // Outer radius for the stroke
+                        backgroundColor: Colors.white,
+                        radius: 22,
                         child: CircleAvatar(
                           backgroundColor: _getBackgroundColor(transaction["icon"]!),
-                          radius: 20, // Inner radius for the actual icon background
+                          radius: 20,
                           child: Icon(
                             _getIcon(transaction["icon"]!),
                             color: Colors.white,
@@ -103,8 +113,8 @@ class TransactionsPage extends StatelessWidget {
                             child: Text(
                               transaction["title"]!,
                               style: const TextStyle(
-                                fontWeight: FontWeight.w300, // Slightly bolder
-                                color: Color(0xFFFAF9F6),
+                                fontWeight: FontWeight.w200,
+                                color: fontPrimaryWhite, // Use fontPrimaryWhite for title text
                                 fontFamily: 'Kantumruy',
                               ),
                               overflow: TextOverflow.ellipsis,
@@ -172,7 +182,7 @@ class TransactionsPage extends StatelessWidget {
   Color _getBackgroundColor(String iconName) {
     switch (iconName) {
       case "home":
-        return const Color(0xFF005B7A);
+        return secondaryColor; // Use secondaryColor for home icon background
       case "wifi":
         return Colors.orange;
       case "swap_horiz":

@@ -1,5 +1,15 @@
 import 'package:flutter/material.dart';
 
+// Color constants
+const Color primaryColor = Color(0xFF002E44);
+const Color secondaryColor = Color(0xFF005B7A);
+const Color accentColorAmber = Color(0xFF04B9D4);
+const Color accentColorRed = Color(0xFFE3252D);
+const Color accentColorGreen = Color(0xFF0CAC2C);
+const Color fontPrimaryBlack = Color(0xFF000000);
+const Color fontPrimaryWhite = Color(0xFFFFFFFF);
+const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+
 class PersonalSettingsPage extends StatelessWidget {
   // Grouped notifications by date
   final Map<String, List<Map<String, String>>> groupedNotifications = {
@@ -29,7 +39,7 @@ class PersonalSettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF002E44),
+      backgroundColor: primaryColor, // Use primaryColor constant
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16.0),
         child: Column(
@@ -46,7 +56,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w400,
-                      color: Color(0xFFFAF9F6),
+                      color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for text color
                       fontFamily: 'Kantumruy',
                     ),
                   ),
@@ -64,7 +74,7 @@ class PersonalSettingsPage extends StatelessWidget {
 
   Widget _buildNotificationCard(Map<String, String> notification) {
     return Card(
-      color: const Color(0xFF005B7A),
+      color: secondaryColor, // Use secondaryColor constant
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(15),
       ),
@@ -98,7 +108,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.w200,
-                      color: Color(0xFFFAF9F6),
+                      color: fontPrimaryWhite, // Use fontPrimaryWhite for title text color
                       fontFamily: 'Kantumruy',
                     ),
                   ),
@@ -107,7 +117,7 @@ class PersonalSettingsPage extends StatelessWidget {
                     notification["description"]!,
                     style: const TextStyle(
                       fontSize: 14,
-                      color: Color(0xFFFAF9F6),
+                      color: fontPrimaryWhite, // Use fontPrimaryWhite for description text color
                       fontFamily: 'Kantumruy',
                       fontWeight: FontWeight.w100,
                     ),

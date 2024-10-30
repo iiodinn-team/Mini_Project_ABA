@@ -3,6 +3,16 @@ import ' important_notifications_page.dart';
 import 'transactions_page.dart';
 import 'personal_settings_page.dart';
 
+// Color constants
+const Color primaryColor = Color(0xFF002E44);
+const Color secondaryColor = Color(0xFF005B7A);
+const Color accentColorAmber = Color(0xFF04B9D4);
+const Color accentColorRed = Color(0xFFE3252D);
+const Color accentColorGreen = Color(0xFF0CAC2C);
+const Color fontPrimaryBlack = Color(0xFF000000);
+const Color fontPrimaryWhite = Color(0xFFFFFFFF);
+const Color fontPrimaryWhite85 = Color(0xFFFAF9F6);
+
 class BottomNavigationBarPage extends StatefulWidget {
   @override
   _BottomNavigationBarPageState createState() => _BottomNavigationBarPageState();
@@ -28,9 +38,9 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFF002E44),
+      backgroundColor: primaryColor, // Use primaryColor constant
       appBar: AppBar(
-        backgroundColor: Color(0xFF002E44),
+        backgroundColor: primaryColor, // Use primaryColor constant
         elevation: 0,
         title: Align(
           alignment: Alignment.centerLeft,
@@ -39,7 +49,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w500,
-              color: Color(0xFFFAF9F6),
+              color: fontPrimaryWhite85, // Use fontPrimaryWhite85 for text color
               fontFamily: 'Kantumruy',
             ),
           ),
@@ -53,7 +63,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(30), // Corner radius for the navigation bar
               child: Container(
-                color: Color(0xFF005B7A),
+                color: secondaryColor, // Use secondaryColor constant
                 padding: EdgeInsets.symmetric(vertical: 8),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -64,7 +74,7 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                         padding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                         decoration: BoxDecoration(
                           color: _selectedIndex == index
-                              ? Color(0xFF04B9D4)
+                              ? accentColorAmber // Use accentColorAmber for selected tab
                               : Colors.transparent,
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -72,8 +82,8 @@ class _BottomNavigationBarPageState extends State<BottomNavigationBarPage> {
                           _tabs[index],
                           style: TextStyle(
                             color: _selectedIndex == index
-                                ? Colors.white // White text color for selected tab
-                                : Color(0xFFFAF9F6), // Default text color for unselected tab
+                                ? fontPrimaryWhite // Use fontPrimaryWhite for selected tab text
+                                : fontPrimaryWhite85, // Use fontPrimaryWhite85 for unselected tab text
                             fontWeight: FontWeight.w100,
                             fontFamily: 'Kantumruy',
                           ),
