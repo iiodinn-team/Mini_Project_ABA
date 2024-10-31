@@ -19,8 +19,8 @@ class CustomBankServiceWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-          height: 115,
-          width: 115,
+          height: 90,
+          width: 90,
           decoration: BoxDecoration(
             color: backgroundColor,
             borderRadius: BorderRadius.circular(20.0),
@@ -40,16 +40,16 @@ class CustomBankServiceWidget extends StatelessWidget {
                 ).createShader(bounds),
                 child: Icon(
                   icon,
-                  size: 50,
+                  size: 45,
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(height: 6),
+              const SizedBox(height: 5),
               Text(
                 title,
                 style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
+                  fontSize: 16,
+                  fontWeight: FontWeight.w100,
                   color: textColor,
                 ),
               ),

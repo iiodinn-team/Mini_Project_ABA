@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mini_project_aba/pages/profile_screen.dart';
+
+import '../screens/homePage/home.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -7,12 +8,24 @@ void main() {
   ));
 }
 
-class SplashScreen extends StatefulWidget {
+class SplashScreen extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "splashScreen",
+      debugShowCheckedModeBanner: false,
+      home: SplashScreenPage(),
+    );
+  }
+
+}
+
+class SplashScreenPage extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
-class _SplashScreenState extends State<SplashScreen> {
+class _SplashScreenState extends State<SplashScreenPage> {
   @override
   void initState() {
     super.initState();
@@ -21,7 +34,7 @@ class _SplashScreenState extends State<SplashScreen> {
     Future.delayed(Duration(seconds: 3), () {
       Navigator.pushReplacement(
         context,
-        MaterialPageRoute(builder: (context) => ProfileScreen()),
+        MaterialPageRoute(builder: (context) => Home()),
       );
     });
   }
@@ -64,50 +77,6 @@ class _SplashScreenState extends State<SplashScreen> {
                 ],
               ),
               textAlign: TextAlign.center,
-            // ),
-            // Column(
-            // children: [
-            // const SizedBox(height: 16), // Add some space before the button
-            // TextButton(
-            // onPressed: () {
-            // // Navigate to ProfileScreen immediately when the button is pressed
-            // Navigator.pushReplacement(
-            // context,
-            // MaterialPageRoute(builder: (context) => const ProfileScreen()),
-            // );
-            // },
-            // child: const Text.rich(
-            // TextSpan(
-            // children: [
-            // TextSpan(
-            // text: 'ABA', // First part of the text
-            // style: TextStyle(
-            // fontSize: 24, // Example font size
-            // fontWeight: FontWeight.bold, // Example font weight
-            // color: Colors.white, // Example text color
-            // ),
-            // ),
-            // TextSpan(
-            // text: '\' ', // Second part of the text
-            // style: TextStyle(
-            // fontSize: 24, // Example font size
-            // fontWeight: FontWeight.bold, // Example font weight
-            // color: Colors.red, // Example text color
-            // ),
-            // ),
-            // TextSpan(
-            // text: 'Mobile', // Third part of the text with different style
-            // style: TextStyle(
-            // fontSize: 24, // Custom font size
-            // fontWeight: FontWeight.bold, // Custom font weight
-            // color: Colors.white, // Custom text color
-            // ),
-            // ),
-            // ],
-            // ),
-            // ),
-            // ),
-            // ],
             )
           ],
         ),

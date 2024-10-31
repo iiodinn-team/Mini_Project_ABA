@@ -78,7 +78,8 @@ class PamentHomePage extends StatelessWidget {
               'ការកំណត់ផ្សេងៗ',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 26,
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
                 fontFamily: 'KantumruyPro',
               ),
             ),
@@ -143,7 +144,7 @@ class PamentHomePage extends StatelessWidget {
                                   ),
                                   title: Text(
                                     item["title"], // Use the title from the list
-                                    style: const TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'KantumruyPro'),
+                                    style: const TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'KantumruyPro',fontWeight: FontWeight.w100),
                                   ),
                                   trailing: const Icon(
                                     Icons.navigate_next_rounded, // Use a different icon
@@ -161,7 +162,6 @@ class PamentHomePage extends StatelessWidget {
                       'កម្មវិធីកំណែ: v5.20.500.24', // Replace with your actual text
                       style: TextStyle(color: Colors.white70, fontSize: 14, fontFamily: 'KantumruyPro'),
                     ),
-                    const SizedBox(height: 140,),
                   ],
                 ),
               ),

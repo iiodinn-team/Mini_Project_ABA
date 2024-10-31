@@ -47,6 +47,7 @@ class ScheduleHome extends StatelessWidget {
                 color: Colors.white,
                 fontSize: 24,
                 fontWeight: FontWeight.w600,
+                fontFamily: 'KantumruyPro',
               ),
             ),
             SizedBox(width: 10),
@@ -54,7 +55,9 @@ class ScheduleHome extends StatelessWidget {
               'ការវិភាគ',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
+                fontFamily: 'KantumruyPro',
               ),
             ),
           ],
@@ -88,12 +91,12 @@ class ScheduleHome extends StatelessWidget {
                       children: [
                         Text(
                           "ផ្ទេរប្រាក់ & ការទូទាត់",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
+                          style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'KantumruyPro'),
                         ),
                         SizedBox(height: 15),
                         Text(
                           "រៀបចំទម្លាប់ប្រចាំថ្ងៃរបស់អ្នក។ កំណត់ប្រតិបត្តិការដោយស្វ័យប្រវត្តិសម្រាប់ការទូទាត់ ឬការផ្ទេរប្រាក់លើស",
-                          style: TextStyle(color: Colors.white),
+                          style: TextStyle(color: Colors.white70, fontSize: 15, fontFamily: 'KantumruyPro', fontWeight: FontWeight.w100),
                         ),
                       ],
                     ),
@@ -141,6 +144,7 @@ class ScheduleHome extends StatelessWidget {
                         color: Colors.white,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        fontFamily: 'KantumruyPro',
                       ),
                     ),
                   ),
@@ -160,7 +164,7 @@ class ScheduleHome extends StatelessWidget {
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                        fontWeight: FontWeight.w200,
                         fontFamily: 'Kantumruy',
                       ),
                     ),

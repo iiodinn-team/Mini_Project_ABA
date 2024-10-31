@@ -3,11 +3,22 @@ import 'package:flutter/material.dart';
 import '../screens/homePage/home.dart';
 
 void main() {
-  runApp(const CardScreen());
+  runApp( CardScreen());
 }
 
 class CardScreen extends StatelessWidget {
-  const CardScreen({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "card",
+      debugShowCheckedModeBanner: false,
+      home: CardScreenPage(),
+    );
+  }
+
+}
+class CardScreenPage extends StatelessWidget {
+  const CardScreenPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -94,11 +105,12 @@ class PamentHomePage extends StatelessWidget {
             ),
             SizedBox(width: 10),
             Text(
-              'Cards',
+              'កាត',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
                 fontFamily: 'KantumruyPro',
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
               ),
             ),
           ],
@@ -111,7 +123,8 @@ class PamentHomePage extends StatelessWidget {
           children: [
             const CircleAvatar(
               radius: 50,
-              backgroundColor: Colors.white24,
+              // backgroundColor: Colors.white24,
+              backgroundColor: Colors.grey,
               child: Icon(
                 Icons.local_atm_rounded,
                 size: 60,
@@ -120,11 +133,11 @@ class PamentHomePage extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             const Text(
-              'New Card',
+              'គណនីថ្មី',
               style: TextStyle(
                 fontSize: 20,
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
+                fontWeight: FontWeight.w300,
                 fontFamily: 'KantumruyPro',
               ),
             ),
@@ -134,13 +147,16 @@ class PamentHomePage extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(vertical: 10),
                 color: const Color(0xFF091015),
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+                  padding: const EdgeInsets.symmetric( horizontal: 5),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'Special Edition Debit Cards',
-                        style: TextStyle(color: Colors.white70, fontSize: 22, fontFamily: 'KantumruyPro'),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 25,top: 5),
+                        child: Text(
+                          'ប័ណ្ណឥណពន្ធពិសេស',
+                          style: TextStyle(color: Colors.white70, fontSize: 19, fontFamily: 'KantumruyPro',fontWeight: FontWeight.w100),
+                        ),
                       ),
                       const SizedBox(height: 10),
                       Expanded(

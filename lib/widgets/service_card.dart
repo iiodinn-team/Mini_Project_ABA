@@ -19,20 +19,25 @@ class ServiceCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(18),
           child: Image.network(
             imageUrl,
-            height: 100,
-            width: 100,
+            height: 60,
+            width: 60,
               fit: BoxFit.cover
           ),
         ),
         const SizedBox(height: 8),
-        Text(
-          text,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 16,
-            color: fontPrimaryWhite,
+        Container(
+          width: 100,
+          alignment: Alignment.center,
+          child: Text(
+            text,
+            textAlign: TextAlign.center,
+            style: const TextStyle(
+              fontWeight: FontWeight.w100,
+              fontSize: 16,
+              color: fontPrimaryWhite,
+            ),
           ),
-        ),
+        )
       ],
     );
   }

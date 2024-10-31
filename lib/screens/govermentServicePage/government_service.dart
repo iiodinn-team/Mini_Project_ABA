@@ -104,8 +104,9 @@ class GovernmentHomePage extends StatelessWidget {
               'ទូទាត់ប្រាក់',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
                 fontFamily: 'Kantumruy',
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
               ),
             ),
           ],
@@ -139,12 +140,12 @@ class GovernmentHomePage extends StatelessWidget {
                       children: [
                         Text(
                           "សេវាស្ថាប័នរដ្ឋភិបាល",
-                          style: TextStyle(color: Colors.white, fontSize: 20,fontFamily: 'Kantumruy',),
+                          style: TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'KantumruyPro'),
                         ),
                         SizedBox(height: 8),
                         Text(
                           "បង់ថ្លៃពន្ធ ពន្ធគយ ថ្លៃលិខិតអនុញ្ញាតផ្សេងៗ និងថ្លៃចំណាយផ្សេងៗទៀតដល់រដ្ខាភិបាល",
-                          style: TextStyle(color: Colors.white,fontFamily: 'Kantumruy',),
+                          style: TextStyle(color: Colors.white70, fontSize: 15, fontFamily: 'KantumruyPro', fontWeight: FontWeight.w100),
                         ),
                       ],
                     ),

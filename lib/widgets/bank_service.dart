@@ -19,7 +19,7 @@ class CustomBankService extends StatelessWidget {
     this.textColor = Colors.white,
     this.fontSize = 18.0,
     this.fontWeight = FontWeight.bold,
-    this.padding = const EdgeInsets.symmetric(horizontal: 30, vertical: 20),
+    this.padding = const EdgeInsets.symmetric(horizontal: 17, vertical: 10),
     this.borderRadius = 30.0,
     this.onTap,
   });
@@ -66,7 +66,7 @@ class CustomBankService extends StatelessWidget {
               text,
               style: TextStyle(
                 color: textColor,
-                fontWeight: fontWeight,
+                fontWeight: FontWeight.w100,
                 fontSize: fontSize,
               ),
             ),

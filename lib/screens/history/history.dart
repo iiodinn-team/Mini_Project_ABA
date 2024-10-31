@@ -67,8 +67,9 @@ class GovernmentHomePage extends StatelessWidget {
               'មើលប្រវត្តិ',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 22,
                 fontFamily: 'Kantumruy',
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
               ),
             ),
           ],

@@ -13,12 +13,12 @@ class ImportantNotificationsPage extends StatelessWidget {
           height: 100,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
-            color: secondaryColor, // Use the secondaryColor constant
+            color: Colors.white10, // Use the secondaryColor constant
           ),
           child: Center(
             child: Icon(
               Icons.notifications_none,
-              color: primaryColor, // Use primaryColor for the icon color
+              color: primaryColor,
               size: 60,
             ),
           ),

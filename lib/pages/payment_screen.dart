@@ -107,8 +107,9 @@ class PamentHomePage extends StatelessWidget {
               'ទូទាត់ប្រាក់',
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 26,
                 fontFamily: 'KantumruyPro',
+                fontSize: 20,
+                fontWeight: FontWeight.w200,
               ),
             ),
           ],
@@ -147,7 +148,7 @@ class PamentHomePage extends StatelessWidget {
                         SizedBox(height: 8),
                         Text(
                           "បញ្ចូលលុយទូរសព្ទ បង់ទឹក ភ្លើង សំរាម និងសេវាចឫបាច់នានាដោយឥតគិតថ្លៃ",
-                          style: TextStyle(color: Colors.white70, fontSize: 16, fontFamily: 'KantumruyPro'),
+                          style: TextStyle(color: Colors.white70, fontSize: 16, fontFamily: 'KantumruyPro', fontWeight: FontWeight.w100),
                         ),
                       ],
                     ),
@@ -209,11 +210,11 @@ class PamentHomePage extends StatelessWidget {
                           ),
                           title: Text(
                             item["title"], // Use the title from the list
-                            style: const TextStyle(color: Colors.white, fontSize: 20, fontFamily: 'KantumruyPro'),
+                            style: const TextStyle(color: Colors.white, fontSize: 18, fontFamily: 'KantumruyPro', fontWeight: FontWeight.w300),
                           ),
                           subtitle: Text(
                             item["subtitle"], // Use the subtitle from the list
-                            style: const TextStyle(color: Colors.white70, fontSize: 14, fontFamily: 'KantumruyPro'),
+                            style: const TextStyle(color: Colors.white70, fontSize: 16, fontFamily: 'KantumruyPro',fontWeight: FontWeight.w100),
                           ),
                         ),
                       ),
